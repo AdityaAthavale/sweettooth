@@ -28,10 +28,24 @@
   color: #61dafb;
 }
 
+.centered {
+  text-align: center;
+  justify-content: center;
+}
+
 #UploadWindow {
   margin: 10%;
+  width: 50%;
+  height: 50%;
   border-style: dotted;
   border-color: royalblue;
+}
+
+#CakeMaker {
+  width: 50%;
+  height: 50%;
+  border-style: solid;
+  border-color: black;
 }
 
 @keyframes App-logo-spin {
