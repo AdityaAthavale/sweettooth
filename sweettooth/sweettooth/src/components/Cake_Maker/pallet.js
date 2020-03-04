@@ -9,13 +9,26 @@ class pallet extends React.Component {
         }
     }
 
-    drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-
     render() {
         return(
-            <Pallet_component />
+            <div>
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+                <Pallet_component />
+            </div>
         )
     }
 }

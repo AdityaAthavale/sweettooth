@@ -1,5 +1,7 @@
 import React from "react";
-import cake_board from "./cake_board";
+import Canvas from './canvas';
+import Pallet from "./pallet";
+import { DragNDropProvider } from "../DataProviders/DragNDropDataProvider";
 
 class CakeMaker extends React.Component {
     constructor(props) {
@@ -11,9 +13,16 @@ class CakeMaker extends React.Component {
 
     render() {
         return(
-            <div>
-                <cake_board />
-            </div>
+            <DragNDropProvider>
+                <div className="row">
+                    <div className="col-md-4">
+                        <Pallet />
+                    </div>
+                    <div className="col-md-4">
+                        <Canvas />
+                    </div>
+                </div>
+            </DragNDropProvider>
         )
     }
 }

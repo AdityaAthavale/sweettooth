@@ -1,17 +1,39 @@
 import React from "react";
-import './Canvas.css';
+import Cake_board from "./cake_board";
 
 class CakeCanvas extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            isDrawing: false,
-            dropableContent: {}
-        }
     }
+
+    board2DArray = [
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]
+
     render() {
-        return(
+        return( 
             <div id="canvas">
+                {
+                    this.board2DArray.map((value, indexRow) => {
+                        return (
+                            <div className="row boardRow">
+                                {
+                                    value.map((square, indexColumn) => {
+                                        return <Cake_board row={indexRow} column={indexColumn}/>
+                                    })
+                                }
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }

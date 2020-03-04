@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 import ImageUploader from "./components/Image_Uploader/ImageUpload"
 import NavBar from "./components/Nav_Bar/NavBar"
 import './App.css';
-import Cake_board from "./components/Cake_Maker/cake_board";
-import Pallet from "./components/Cake_Maker/pallet";
+import CakeMaker from "./components/Cake_Maker/CakeMaker";
+import BasicCakeDetails from "./components/Forms/BasicCakeDetails"
 
 
 function App() {
@@ -15,23 +15,25 @@ function App() {
   return (
     <div>
       <NavBar />
-      <div className="container">
-        <div className="row">
-          <div id="UploadWindow">
-            <ImageUploader onDrop={onDrop} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-4">
-            <Pallet />
-          </div>
-          <div className="col-md-8">
-            <Cake_board />
-          </div>
-        </div>
+      {/* <div className="container">
+        <BasicCakeDetails />
+      </div> */}
+      <div className="row">
+        <CakeMaker />
       </div>
     </div>
   );
 }
+
+
+{/* <div className="row">
+<CakeMaker />
+</div> */}
+
+{/* <div className="row">
+          <div id="UploadWindow">
+            <ImageUploader onDrop={onDrop} />
+          </div>
+        </div> */}
 
 export default App;
