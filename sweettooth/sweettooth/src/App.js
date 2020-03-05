@@ -16,19 +16,18 @@ function App() {
 
   return (
     
-      // <Router>
+      <Router>
         <div>
           <NavBar />
           <div className="container">
-          {/* <CakeDataProvider>
-            <Route exact path="/" component={BasicCakeDetails} />
+          <CakeDataProvider>
             <Route exact path="/cakeMaker" component={CakeMaker} />
-            <Route exact path="/submitCake" component={CakeMaker} />
-          </CakeDataProvider> */}
-          <BasicCakeDetails />
+            <Route exact path="/submitCake" component={ImageUploader} />
+            <Route path="/" component={BasicCakeDetails} />
+          </CakeDataProvider>
           </div>
         </div>
-      // </Router>
+      </Router>
   );
 }
 
