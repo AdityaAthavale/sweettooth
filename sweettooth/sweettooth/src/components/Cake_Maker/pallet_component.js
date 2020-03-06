@@ -4,9 +4,6 @@ import { DragNDropContext } from "../DataProviders/DragNDropDataProvider";
 class pallet_component extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            isDrawing: false
-        }
     }
 
     drag(ev) {

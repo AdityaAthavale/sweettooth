@@ -1,9 +1,11 @@
 import React, { useCallback } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ImageUploader from "./components/Image_Uploader/ImageUpload"
 import NavBar from "./components/Nav_Bar/NavBar"
 import './App.css';
 import CakeMaker from "./components/Cake_Maker/CakeMaker";
 import BasicCakeDetails from "./components/Forms/BasicCakeDetails"
+import { CakeDataProvider } from "./components/DataProviders/CakeDataProvider";
 
 
 function App() {
@@ -13,15 +15,19 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      {/* <div className="container">
-        <BasicCakeDetails />
-      </div> */}
-      <div className="row">
-        <CakeMaker />
-      </div>
-    </div>
+    
+      <Router>
+        <div>
+          <NavBar />
+          <div className="container">
+          <CakeDataProvider>
+            <Route exact path="/cakeMaker" component={CakeMaker} />
+            <Route exact path="/submitCake" component={ImageUploader} />
+            <Route path="/" component={BasicCakeDetails} />
+          </CakeDataProvider>
+          </div>
+        </div>
+      </Router>
   );
 }
 
