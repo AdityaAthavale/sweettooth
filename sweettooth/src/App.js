@@ -6,6 +6,7 @@ import './App.css';
 import CakeMaker from "./components/Cake_Maker/CakeMaker";
 import BasicCakeDetails from "./components/Forms/BasicCakeDetails"
 import { CakeDataProvider } from "./components/DataProviders/CakeDataProvider";
+import LoginForm from "./components/Login/login";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <CakeDataProvider>
             <Route exact path="/cakeMaker" component={CakeMaker} />
             <Route exact path="/submitCake" component={ImageUploader} />
+            <Route exact path = "/login" component={LoginForm} />
             <Route exact path="/" component={BasicCakeDetails} />
           </CakeDataProvider>
           </div>

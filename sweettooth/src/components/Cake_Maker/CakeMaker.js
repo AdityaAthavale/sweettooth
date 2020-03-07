@@ -1,7 +1,9 @@
 import React from "react";
 import Canvas from './canvas';
 import Pallet from "./pallet";
-import { DragNDropProvider } from "../DataProviders/DragNDropDataProvider";
+import { DragNDropProvider, DragNDropContext } from "../DataProviders/DragNDropDataProvider";
+import { CakeContext } from "../DataProviders/CakeDataProvider";
+import { Link } from "react-router-dom";
 
 class CakeMaker extends React.Component {
     constructor(props) {
@@ -13,16 +15,30 @@ class CakeMaker extends React.Component {
 
     render() {
         return(
-            <DragNDropProvider>
-                <div className="row">
-                    <div className="col-md-4">
-                        <Pallet />
-                    </div>
-                    <div className="col-md-4">
-                        <Canvas />
-                    </div>
-                </div>
-            </DragNDropProvider>
+            <CakeContext.Consumer>
+                {
+                    context => {
+                        return(
+                        <DragNDropProvider>
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <Pallet />
+                                </div>
+                                <div className="col-md-4">
+                                    <Canvas />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <Link to="/login" className="btn btn-success centered" onClick={e => context.saveJSON(e)} type="submit">
+                                    Login
+                                </Link>
+                            </div>
+                        </DragNDropProvider>
+                        )
+                    }
+                }
+                
+            </CakeContext.Consumer>
         )
     }
 }

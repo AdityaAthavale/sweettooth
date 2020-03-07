@@ -1,4 +1,5 @@
 import React from "react";
+import API from './../../API'
 export const CakeContext = React.createContext();
 
 export class CakeDataProvider extends React.Component {
@@ -10,7 +11,9 @@ export class CakeDataProvider extends React.Component {
       cakeBaseFlavor: "",
       cakeDecorationType: "",
       cakeDecorationFlavor: "",
-      baseImage: ""
+      baseImage: "",
+      email: "",
+      password: ""
     };
   }
 
@@ -23,14 +26,27 @@ export class CakeDataProvider extends React.Component {
     });
   }
   
+
+  handleLoginAndSubmit = event => {
+    event.preventDefault()
+    API.login(this.state.email, this.state.password).then((data) => {
+        console.log(data)
+    }).catch((err) => {
+        console.log(err)
+    })
+  }
+
+  saveJSON = event => {
+  
+    //Go back to initial page after submitting request.
+  }
+
   handleFormSubmit = event => {
-    // event.preventDefault();
-    // debugger;
+
     console.log(this.state);
     this.setState({
       // ...this.intialState
     });
-    // window.location = "/cakeMaker"
   }
   
   handleSelectChange = e => {
@@ -46,7 +62,9 @@ export class CakeDataProvider extends React.Component {
           state: this.state,
           handleInputChange: this.handleInputChange,
           handleFormSubmit: this.handleFormSubmit,
-          handleSelectChange: this.handleSelectChange
+          handleSelectChange: this.handleSelectChange,
+          saveJSON: this.saveJSON,
+          handleLoginAndSubmit: this.handleLoginAndSubmit
         }}
       >
         {this.props.children}
