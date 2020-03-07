@@ -91,6 +91,7 @@ export default function HtmlForm(props) {
             </div>
             <div className="row form-group">
                 <Link to="/cakeMaker" className="btn btn-success centered" onClick={e => props.context.handleFormSubmit(e)} type="submit">
+                {/* <Link to="/cakeMaker" className="btn btn-success centered"> */}
                     Next
                 </Link>
             </div>

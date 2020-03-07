@@ -24,13 +24,13 @@ export class CakeDataProvider extends React.Component {
   }
   
   handleFormSubmit = event => {
-    event.preventDefault();
-    debugger;
+    // event.preventDefault();
+    // debugger;
     console.log(this.state);
     this.setState({
-      ...this.intialState
+      // ...this.intialState
     });
-    window.location = "/cakeMaker"
+    // window.location = "/cakeMaker"
   }
   
   handleSelectChange = e => {

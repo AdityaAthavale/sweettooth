@@ -23,7 +23,7 @@ function App() {
           <CakeDataProvider>
             <Route exact path="/cakeMaker" component={CakeMaker} />
             <Route exact path="/submitCake" component={ImageUploader} />
-            <Route path="/" component={BasicCakeDetails} />
+            <Route exact path="/" component={BasicCakeDetails} />
           </CakeDataProvider>
           </div>
         </div>
