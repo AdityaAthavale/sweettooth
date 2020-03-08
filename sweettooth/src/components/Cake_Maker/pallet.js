@@ -2,6 +2,7 @@ import React from "react";
 import Pallet_component from "./pallet_component";
 
 class pallet extends React.Component {
+    palletItems = ["Strawberry", "Pineapple", "Rose flower", "Fondant Flower"]
     constructor(props) {
         super(props)
         this.state = {
@@ -12,22 +13,11 @@ class pallet extends React.Component {
     render() {
         return(
             <div>
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
-                <Pallet_component />
+                {
+                    this.palletItems.map((item)=>{
+                        return(<Pallet_component title={item}/>)
+                    })
+                }
             </div>
         )
     }

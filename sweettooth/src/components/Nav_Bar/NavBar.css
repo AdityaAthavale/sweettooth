@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Cookie|Merienda+One|Sriracha&display=swap");
+
+.customNav {
+    margin-bottom: 2rem;
+}
+
+.navTitle {
+    font-family: 'Cookie', cursive;
+    color: whitesmoke;
+    justify-content: center;
+    font-size: 40;
+}
+
+.formHeader {
+    font-family: 'Cookie', cursive;
+    color: coral;
+    justify-content: center;
+    font-size: 40;
+}

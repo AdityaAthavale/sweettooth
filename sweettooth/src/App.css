@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Cookie|Merienda+One|Sriracha&display=swap");
+
 .App {
   text-align: center;
 }
@@ -12,6 +14,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+/* .appBackground {
+  background-image: url("./background.jpg");
+} */
 
 .App-header {
   background-color: #282c34;
@@ -42,3 +48,7 @@
     transform: rotate(360deg);
   }
 }
+
+/* font-family: 'Cookie', cursive;
+font-family: 'Merienda One', cursive;
+font-family: 'Sriracha', cursive; */

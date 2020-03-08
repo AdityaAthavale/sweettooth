@@ -18,7 +18,7 @@ function App() {
   return (
     
       <Router>
-        <div>
+        <div className="appBackground">
           <NavBar />
           <div className="container">
           <CakeDataProvider>
@@ -32,16 +32,4 @@ function App() {
       </Router>
   );
 }
-
-
-{/* <div className="row">
-<CakeMaker />
-</div> */}
-
-{/* <div className="row">
-          <div id="UploadWindow">
-            <ImageUploader onDrop={onDrop} />
-          </div>
-        </div> */}
-
 export default App;

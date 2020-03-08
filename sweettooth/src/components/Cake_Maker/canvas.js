@@ -26,8 +26,8 @@ class CakeCanvas extends React.Component {
                         return (
                             <div className="row boardRow">
                                 {
-                                    value.map((square, indexColumn) => {
-                                        return <Cake_board row={indexRow} column={indexColumn}/>
+                                    value.map((square) => {
+                                        return <Cake_board row={indexRow} column={square}/>
                                     })
                                 }
                             </div>

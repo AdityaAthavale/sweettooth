@@ -1,7 +1,7 @@
 import React from "react";
-import { CakeDataProvider, CakeContext } from "./../DataProviders/CakeDataProvider";
-import { DragNDropContext } from "./../DataProviders/DragNDropDataProvider";
+import { CakeContext } from "./../DataProviders/CakeDataProvider";
 import HtmlForm from "./HtmlForm";
+import "./forms.css"
 
 export default class BasicCakeDetails extends React.Component {
   render() {
@@ -10,8 +10,8 @@ export default class BasicCakeDetails extends React.Component {
             {
                 context => {
                     return(
-                        <div className="centered">
-                            <h1>Lets get your cake stated:</h1>
+                        <div className="container formBackground">
+                            <h2 className="formHeader">Lets get some basic details: </h2>
                             { <HtmlForm context={context} /> }
                         </div>
                     )

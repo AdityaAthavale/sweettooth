@@ -5,30 +5,32 @@ export class DragNDropProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        status: [],
         item: null,
         droppedIn: null,
     };
   }
 
   dragStarted = (ev) => {
-      console.log("Drag started")
-      // ev.preventDefault();
-      console.log(ev.target)
       this.setState({
-          item: ev.target
+        item: ev.target.getAttribute("src")
       })
   }
 
   itemDropped = (ev) => {
-      console.log("Item Dropped")
       ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
+      let object = {
+        item: this.state.item,
+        droppedIn: ev.target,
+        row: ev.target.getAttribute("row"),
+        column: ev.target.getAttribute("column")
+      }
+      let arr = this.state.status
+      arr.push(object)
       this.setState({
-          droppedIn: ev.target
+        status: arr
       })
-      console.log(this.state.item)
-      console.log("Dropped in")
-      console.log(this.state.droppedIn)
+      console.log("Item dropped")
   }
 
   render() {

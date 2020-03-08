@@ -39,6 +39,11 @@ app.post("/Login", function (req, res) {
     UserDbController.login(req, res)
 })
 
+app.get("/images/:id", function(req, res) {
+  const id = req.params.id
+  res.sendFile(path.join(__dirname, ("./models/Assets/" + id + ".png")))
+})
+
 rounter.use(function (req, res) {
     res.sendFile(path.join(__dirname, "./sweettooth/build/index.html"))  
 })

@@ -11,8 +11,12 @@ class cake_board extends React.Component {
         }
     }
 
-    allowDrop(ev) {
+    allowDrop(ev, context) {
         ev.preventDefault();
+        let contents = context.state.status.filter((value, index) => {
+            return((value.row == this.props.row) && (value.column == this.props.column))
+        })
+        return (contents.length > 0 )
     }
 
     render() {
@@ -20,8 +24,17 @@ class cake_board extends React.Component {
             <DragNDropContext.Consumer>
                 {
                     context => {
+                        let contents = context.state.status.filter((value, index) => {
+                            return((value.row == this.props.row) && (value.column == this.props.column))
+                        })
                         return(
-                            <div className="square" onDrop={(event) => context.itemDropped(event)} onDragOver={(event) => this.allowDrop(event)} />
+                            <div row={this.props.row} column={this.props.column} className="square" onDrop={(event) => context.itemDropped(event)} onDragOver={(event) => this.allowDrop(event, context)}>
+                                {
+                                    contents.map((element) => {
+                                        return (<img src={element.item} />)
+                                    })
+                                }
+                            </div>
                         )
                     }
                 }

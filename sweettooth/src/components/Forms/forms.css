@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Cookie|Merienda+One|Sriracha&display=swap");
+
+.formHeader {
+    font-family: 'Cookie', cursive;
+    color: coral;
+    justify-content: center;
+    font-size: 40;
+}

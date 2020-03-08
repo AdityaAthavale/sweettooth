@@ -6,14 +6,15 @@ export class CakeDataProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cakeOccassion: "",
-      cakeBaseType: "",
-      cakeBaseFlavor: "",
-      cakeDecorationType: "",
-      cakeDecorationFlavor: "",
+      occassion: "",
+      baseType: "",
+      baseFlavor: "",
+      decorationType: "",
+      decorationFlavor: "",
       baseImage: "",
       email: "",
-      password: ""
+      password: "",
+      userDrawing: ""
     };
   }
 
@@ -27,12 +28,23 @@ export class CakeDataProvider extends React.Component {
   }
   
 
-  handleLoginAndSubmit = event => {
+  handleLoginAndSubmit = (drawing, event) => {
     event.preventDefault()
+    this.setState({
+      userDrawing: drawing
+    })
     API.login(this.state.email, this.state.password).then((data) => {
-        console.log(data)
+      this.submitCake()
     }).catch((err) => {
         console.log(err)
+    })
+  }
+
+  submitCake() {
+    API.submitCake(this.state).then((data) => {
+      window.location = "/"
+    }).catch((err) => {
+      alert("Something went wrong when placing order.")
     })
   }
 
@@ -50,8 +62,9 @@ export class CakeDataProvider extends React.Component {
   }
   
   handleSelectChange = e => {
+    const name = e.target.name;
     this.setState({
-      usState: e.target.value
+      [name] : e.target.value
     });
   }
 

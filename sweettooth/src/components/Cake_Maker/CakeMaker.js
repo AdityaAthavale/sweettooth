@@ -20,18 +20,20 @@ class CakeMaker extends React.Component {
                     context => {
                         return(
                         <DragNDropProvider>
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <Pallet />
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-md-4">
+                                        <Pallet />
+                                    </div>
+                                    <div className="col-md-4">
+                                        <Canvas />
+                                    </div>
                                 </div>
-                                <div className="col-md-4">
-                                    <Canvas />
+                                <div className="row">
+                                    <Link to="/login" className="btn btn-success centered" onClick={e => context.saveJSON(e)} type="submit">
+                                        Login
+                                    </Link>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <Link to="/login" className="btn btn-success centered" onClick={e => context.saveJSON(e)} type="submit">
-                                    Login
-                                </Link>
                             </div>
                         </DragNDropProvider>
                         )

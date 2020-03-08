@@ -12,9 +12,9 @@ export default function HtmlForm(props) {
                 </div>
                 <div className="col-md-8">
                     <Input
-                    value={props.context.state.cakeOccassion}
+                    value={props.context.state.occassion}
                     onChange={e => props.context.handleInputChange(e)}
-                    name="cakeOccassion"
+                    name="occassion"
                     type="text"
                     />
                 </div>
@@ -26,8 +26,8 @@ export default function HtmlForm(props) {
                 <div className="col-md-8">
                     <Select
                     onChange={e => props.context.handleSelectChange(e)}
-                    name="cakeBaseType"
-                    value={props.context.state.cakeBaseType}
+                    name="baseType"
+                    value={props.context.state.baseType}
                     data={[
                         { value: "Square", name: "Square" },
                         { value: "Round", name: "Round" }
@@ -42,8 +42,8 @@ export default function HtmlForm(props) {
                 <div className="col-md-8">
                     <Select
                     onChange={e => props.context.handleSelectChange(e)}
-                    name="cakeBaseFlavor"
-                    value={props.context.state.cakeBaseFlavor}
+                    name="baseFlavor"
+                    value={props.context.state.baseFlavor}
                     data={[
                         { value: "Chocolate", name: "Chocolate" },
                         { value: "Vanilla", name: "Vanilla" }
@@ -58,8 +58,8 @@ export default function HtmlForm(props) {
                 <div className="col-md-8">
                 <Select
                 onChange={e => props.context.handleSelectChange(e)}
-                name="cakeDecorationType"
-                value={props.context.state.cakeDecorationType}
+                name="decorationType"
+                value={props.context.state.decorationType}
                 data={[
                     { value: "Royal Cream", name: "RoyalCream" },
                     { value: "Fondent", name: "Fondent" },
@@ -70,13 +70,13 @@ export default function HtmlForm(props) {
             </div>
             <div className="row form-group">
                 <div className="col-md-4">
-                    <label>Decoration flavour (Applicable for Royal Icing only):</label>
+                    <label>Decoration flavour (Royal Icing only):</label>
                 </div>
                 <div className="col-md-8">
                     <Select
                     onChange={e => props.context.handleSelectChange(e)}
-                    name="cakeDecorationFlavor"
-                    value={props.context.state.cakeDecorationFlavor}
+                    name="decorationFlavor"
+                    value={props.context.state.decorationFlavor}
                     data={[
                         { value: "Orange", name: "Orange" },
                         { value: "Strawberry", name: "Strawberry" },
