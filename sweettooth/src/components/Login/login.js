@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "./../Forms/Input";
 import {CakeContext } from "./../DataProviders/CakeDataProvider";
-import { DragNDropContext } from "../DataProviders/DragNDropDataProvider";
+import { DragNDropContext, DragNDropProvider } from "../DataProviders/DragNDropDataProvider";
 
 export default class LoginForm extends React.Component {
     render() {
@@ -13,6 +13,7 @@ export default class LoginForm extends React.Component {
                         <DragNDropContext.Consumer>
                         {
                             dragAndDropContext => {
+                                console.log("This is current status array In login form:" ,dragAndDropContext.state.status)
                                 return(
                                 <div className="container">
                                     <form method="post">
@@ -43,7 +44,8 @@ export default class LoginForm extends React.Component {
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <button className="btn btn-success centered" type="submit" onClick={e => cakeContext.handleLoginAndSubmit(e, dragAndDropContext.state.status)}>
+                                            {console.log('3', dragAndDropContext)}
+                                            <button className="btn btn-success centered" type="button" onClick={e => cakeContext.handleLoginAndSubmit(dragAndDropContext.state.status, e)}>
                                                 Login
                                             </button>
                                         </div>

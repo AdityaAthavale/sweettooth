@@ -19,7 +19,6 @@ class CakeMaker extends React.Component {
                 {
                     context => {
                         return(
-                        <DragNDropProvider>
                             <div className="container">
                                 <div className="row">
                                     <div className="col-md-4">
@@ -35,7 +34,6 @@ class CakeMaker extends React.Component {
                                     </Link>
                                 </div>
                             </div>
-                        </DragNDropProvider>
                         )
                     }
                 }

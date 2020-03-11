@@ -6,6 +6,7 @@ import './App.css';
 import CakeMaker from "./components/Cake_Maker/CakeMaker";
 import BasicCakeDetails from "./components/Forms/BasicCakeDetails"
 import { CakeDataProvider } from "./components/DataProviders/CakeDataProvider";
+import { DragNDropDataProvider, DragNDropProvider } from "./components/DataProviders/DragNDropDataProvider";
 import LoginForm from "./components/Login/login";
 
 
@@ -22,10 +23,12 @@ function App() {
           <NavBar />
           <div className="container">
           <CakeDataProvider>
-            <Route exact path="/cakeMaker" component={CakeMaker} />
-            <Route exact path="/submitCake" component={ImageUploader} />
-            <Route exact path = "/login" component={LoginForm} />
-            <Route exact path="/" component={BasicCakeDetails} />
+            <DragNDropProvider>
+              <Route exact path="/cakeMaker" component={CakeMaker} />
+              <Route exact path="/submitCake" component={ImageUploader} />
+              <Route exact path = "/login" component={LoginForm} />
+              <Route exact path="/" component={BasicCakeDetails} />
+            </DragNDropProvider>
           </CakeDataProvider>
           </div>
         </div>

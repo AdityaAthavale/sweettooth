@@ -21,6 +21,19 @@ export default function HtmlForm(props) {
             </div>
             <div className="row form-group">
                 <div className="col-md-4">
+                    <label>Delivery date:</label>
+                </div>
+                <div className="col-md-8">
+                    <Input
+                    value={props.context.state.occassion}
+                    onChange={e => props.context.handleDateChange(e)}
+                    name="deliveryDate"
+                    type="date"
+                    />
+                </div>
+            </div>
+            <div className="row form-group">
+                <div className="col-md-4">
                     <label>Base Type:</label>
                 </div>
                 <div className="col-md-8">

@@ -14,10 +14,24 @@ export class CakeDataProvider extends React.Component {
       baseImage: "",
       email: "",
       password: "",
-      userDrawing: ""
+      userDrawing: "",
+      deliveryDate: Date()
     };
   }
 
+  handleDateChange = event => {
+    // let value = event.target.value;
+    // const name = event.target.name;
+    // let dt = Date(value)
+    // console.log(dt)
+    // if(dt !== null) {
+    //   debugger;
+    //   this.setState({
+    //     [name]: value
+    //   })
+    // }
+  }
+  
   handleInputChange = event => {
     // update state
     let value = event.target.value;
@@ -29,7 +43,7 @@ export class CakeDataProvider extends React.Component {
   
 
   handleLoginAndSubmit = (drawing, event) => {
-    event.preventDefault()
+    console.log("This is drawing", drawing)
     this.setState({
       userDrawing: drawing
     })
@@ -42,6 +56,7 @@ export class CakeDataProvider extends React.Component {
 
   submitCake() {
     API.submitCake(this.state).then((data) => {
+      console.log("cake saved......")
       window.location = "/"
     }).catch((err) => {
       alert("Something went wrong when placing order.")
@@ -77,7 +92,8 @@ export class CakeDataProvider extends React.Component {
           handleFormSubmit: this.handleFormSubmit,
           handleSelectChange: this.handleSelectChange,
           saveJSON: this.saveJSON,
-          handleLoginAndSubmit: this.handleLoginAndSubmit
+          handleLoginAndSubmit: this.handleLoginAndSubmit,
+          handleDateChange: this.handleDateChange
         }}
       >
         {this.props.children}

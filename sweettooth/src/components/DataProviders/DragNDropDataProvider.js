@@ -21,16 +21,15 @@ export class DragNDropProvider extends React.Component {
       ev.preventDefault();
       let object = {
         item: this.state.item,
-        droppedIn: ev.target,
         row: ev.target.getAttribute("row"),
         column: ev.target.getAttribute("column")
       }
       let arr = this.state.status
       arr.push(object)
+      console.log(arr)
       this.setState({
         status: arr
       })
-      console.log("Item dropped")
   }
 
   render() {
