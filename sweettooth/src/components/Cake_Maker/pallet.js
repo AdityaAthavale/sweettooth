@@ -2,7 +2,7 @@ import React from "react";
 import Pallet_component from "./pallet_component";
 
 class pallet extends React.Component {
-    palletItems = ["Strawberry", "Pineapple", "Rose flower", "Fondant Flower"]
+    palletItems = ["Apple", "Fondant Flower", "Rose flower", "Pineapple", "Orange", "Strawberry"]
     constructor(props) {
         super(props)
         this.state = {

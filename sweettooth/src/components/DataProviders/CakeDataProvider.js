@@ -1,5 +1,6 @@
 import React from "react";
 import API from './../../API'
+
 export const CakeContext = React.createContext();
 
 export class CakeDataProvider extends React.Component {
@@ -15,21 +16,15 @@ export class CakeDataProvider extends React.Component {
       email: "",
       password: "",
       userDrawing: "",
-      deliveryDate: Date()
+      deliveryDate: new Date()
     };
   }
 
-  handleDateChange = event => {
-    // let value = event.target.value;
-    // const name = event.target.name;
-    // let dt = Date(value)
-    // console.log(dt)
-    // if(dt !== null) {
-    //   debugger;
-    //   this.setState({
-    //     [name]: value
-    //   })
-    // }
+  handleDateChange = date => {
+    console.log('Handle date change called!!!')
+    this.setState({
+      deliveryDate: date
+    });
   }
   
   handleInputChange = event => {

@@ -1,5 +1,6 @@
 import React from "react";
 import Cake_board from "./cake_board";
+import { CakeContext } from "../DataProviders/CakeDataProvider";
 
 class CakeCanvas extends React.Component {
     constructor(props) {
@@ -20,21 +21,28 @@ class CakeCanvas extends React.Component {
 
     render() {
         return( 
-            <div id="canvas">
+            <CakeContext.Consumer>
                 {
-                    this.board2DArray.map((value, indexRow) => {
-                        return (
-                            <div className="row boardRow">
-                                {
-                                    value.map((square) => {
-                                        return <Cake_board row={indexRow} column={square}/>
-                                    })
-                                }
-                            </div>
-                        )
-                    })
+                    context => {
+                        console.log(context.state.baseType)
+                        return(<div id="canvas" className={context.state.baseFlavor == "Vanilla" ? "vanilla" : "chocolate"}>
+                            {
+                                this.board2DArray.map((value, indexRow) => {
+                                    return (
+                                        <div className="row boardRow">
+                                            {
+                                                value.map((square) => {
+                                                    return <Cake_board row={indexRow} column={square}/>
+                                                })
+                                            }
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>)
+                    }
                 }
-            </div>
+            </CakeContext.Consumer>
         )
     }
 }
