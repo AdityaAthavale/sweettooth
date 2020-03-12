@@ -12,7 +12,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'sweettooth/*'\" \"npm run client\"",
     "client": "cd sweettooth && npm run start",
     "install": "cd sweettooth && npm install",
-    "build": "cd sweettooth && npm run build",
+    "build": "cd sweettooth && npm run build"
     // "heroku-postbuild": "npm run build"
   },
   "repository": {
