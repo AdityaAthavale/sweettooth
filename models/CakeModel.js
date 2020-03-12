@@ -7,9 +7,9 @@ const CakeSchema = new Schema({
     baseFlavor: { type: String, required: true },
     decorationType: { type: String, required: true },
     decorationFlavor: { type: String, required: true },
-    delivaryDate: {type: Date, required: true},
+    deliveryDate: {type: Date, required: true},
     userId: {type: String, required: true},
-    details: {type: String, required: false},
+    userDrawing: {type: String, required: false},
     image: {type: String, required: false}
 });
 

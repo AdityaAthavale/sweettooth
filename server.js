@@ -35,14 +35,20 @@ app.post("/createNewUser", function (req, res) {
     UserDbController.create(req, res) 
 })
 
-app.post("/Login", function (req, res) {
+app.post("/login", function (req, res) {
     UserDbController.login(req, res)
 })
 
 app.get("/images/:id", function(req, res) {
   const id = req.params.id
-  res.sendFile(path.join(__dirname, ("./models/Assets/" + id + ".png")))
+  res.sendFile(path.join(__dirname, ("./models/Assets/Pallet/" + id + ".png")))
 })
+
+app.get("/images/canvas/:id", function(req, res) {
+  const id = req.params.id
+  res.sendFile(path.join(__dirname, ("./models/Assets/Canvas/" + id + ".png")))
+})
+
 
 rounter.use(function (req, res) {
     res.sendFile(path.join(__dirname, "./sweettooth/build/index.html"))  

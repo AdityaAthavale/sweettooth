@@ -12,6 +12,9 @@
     "build": "cd sweettooth && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "12.9.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdityaAthavale/sweettooth.git"

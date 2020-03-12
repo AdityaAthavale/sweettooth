@@ -6,10 +6,8 @@ module.exports = {
   login: function(req, res) {
     db.find({email: req.body.email})
       .then(dbUser => {
-          console.log(dbUser)
-          console.log(req.body.password)
           if(dbUser[0].password === req.body.password) {
-            res.json(dbUser)
+            res.json(dbUser[0])
           }
           res.status(401).json("UnAuthorized")
       })
