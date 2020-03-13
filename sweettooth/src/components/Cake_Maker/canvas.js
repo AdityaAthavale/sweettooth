@@ -29,10 +29,10 @@ class CakeCanvas extends React.Component {
                             {
                                 this.board2DArray.map((value, indexRow) => {
                                     return (
-                                        <div className="row boardRow">
+                                        <div key={indexRow} className="row boardRow">
                                             {
                                                 value.map((square) => {
-                                                    return <Cake_board row={indexRow} column={square}/>
+                                                    return <Cake_board key={indexRow * 10 + square} row={indexRow} column={square}/>
                                                 })
                                             }
                                         </div>

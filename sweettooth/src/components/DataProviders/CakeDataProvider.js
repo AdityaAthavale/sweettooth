@@ -7,11 +7,11 @@ export class CakeDataProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      occassion: "",
-      baseType: "",
-      baseFlavor: "",
-      decorationType: "",
-      decorationFlavor: "",
+      occassion: "Birthday",
+      baseType: "Round",
+      baseFlavor: "Vanilla",
+      decorationType: "Fondent",
+      decorationFlavor: "Strawberry",
       baseImage: "",
       email: "",
       password: "",

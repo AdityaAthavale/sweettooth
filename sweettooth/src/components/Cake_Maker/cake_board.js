@@ -31,7 +31,7 @@ class cake_board extends React.Component {
                             <div row={this.props.row} column={this.props.column} className="square" onDrop={(event) => context.itemDropped(event)} onDragOver={(event) => this.allowDrop(event, context)}>
                                 {
                                     contents.map((element) => {
-                                        return (<img src={element.item} />)
+                                        return (<img key={"object" + element.src} src={element.item} />)
                                     })
                                 }
                             </div>

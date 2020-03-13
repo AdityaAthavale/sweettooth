@@ -14,8 +14,8 @@ class pallet extends React.Component {
         return(
             <div>
                 {
-                    this.palletItems.map((item)=>{
-                        return(<Pallet_component title={item}/>)
+                    this.palletItems.map((item, index)=>{
+                        return(<Pallet_component key={index} title={item}/>)
                     })
                 }
             </div>
